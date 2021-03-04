@@ -16,12 +16,18 @@ let salida4 = "0";
 let salida5 = "0";
 let salida6 = "0";
 
+let icono = <i className="fas fa-pause-circle"></i>;
+let leyendaboton = "  Pausar  ";
+
 function pausa_continua() {
 	if (estado == true) {
 		estado = false;
+		leyendaboton = "Reanudar";
+		icono = <i className="fas fa-play-circle"></i>;
 	} else {
 		estado = true;
-
+		leyendaboton = "  Pausar  ";
+		icono = <i className="fas fa-pause"></i>;
 		console.log(delay);
 	}
 	console.log(delay);
@@ -88,7 +94,11 @@ export function Home() {
 				cont5={salida5}
 				cont6={salida6}
 			/>
-			<Events pausacontinua={pausa_continua} />
+			<Events
+				pausacontinua={pausa_continua}
+				lecturaboton={icono}
+				leyboton={leyendaboton}
+			/>
 		</div>
 	);
 }

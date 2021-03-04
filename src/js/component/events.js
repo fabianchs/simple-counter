@@ -8,11 +8,13 @@ export function Events(props) {
 				onClick={props.pausacontinua}
 				type="button"
 				className="btn btn-success">
-				Secondary
+				{props.lecturaboton} {props.leyboton}
 			</button>
 		</div>
 	);
 }
 Events.propTypes = {
-	pausacontinua: PropTypes.func
+	pausacontinua: PropTypes.func,
+	lecturaboton: PropTypes.string,
+	leyboton: PropTypes.string
 };
