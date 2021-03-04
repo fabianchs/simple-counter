@@ -15,9 +15,17 @@ let salida3 = "0";
 let salida4 = "0";
 let salida5 = "0";
 let salida6 = "0";
+let sentido = true;
 
 let icono = <i className="fas fa-pause-circle"></i>;
-let leyendaboton = "  Paausar  ";
+let leyendaboton = "  Pausar  ";
+
+function reversa() {
+	sentido = false;
+}
+function avance() {
+	sentido = true;
+}
 
 function pausa_continua() {
 	if (estado == true) {
@@ -35,7 +43,11 @@ function pausa_continua() {
 
 setInterval(function() {
 	if (estado == true) {
-		contador++;
+		if (sentido == true) {
+			contador++;
+		} else if (sentido == false) {
+			contador--;
+		}
 	} else if (estado == false) {
 		//pass
 	}
@@ -98,6 +110,8 @@ export function Home() {
 				pausacontinua={pausa_continua}
 				lecturaboton={icono}
 				leyboton={leyendaboton}
+				retroceso={reversa}
+				restaurar={avance}
 			/>
 		</div>
 	);
