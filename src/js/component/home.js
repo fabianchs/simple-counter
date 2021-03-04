@@ -2,8 +2,12 @@ import React from "react";
 
 //include images into your bundle
 import { Counters } from "./counters.js";
+import { Events } from "./events.js";
 
+let estado = true;
+let delay = 1000;
 let valores = "0";
+let cero = "0";
 let contador = 999995;
 let salida = "0";
 let salida2 = "0";
@@ -12,8 +16,23 @@ let salida4 = "0";
 let salida5 = "0";
 let salida6 = "0";
 
+function pausa_continua() {
+	if (estado == true) {
+		estado = false;
+	} else {
+		estado = true;
+
+		console.log(delay);
+	}
+	console.log(delay);
+}
+
 setInterval(function() {
-	contador++;
+	if (estado == true) {
+		contador++;
+	} else if (estado == false) {
+		//pass
+	}
 
 	valores = contador.toString();
 
@@ -45,15 +64,17 @@ setInterval(function() {
 		salida5 = valores[1];
 		salida6 = valores[0];
 	} else if (contador > 999999) {
-		salida = 0;
-		salida2 = 0;
-		salida3 = 0;
-		salida4 = 0;
-		salida5 = 0;
-		salida6 = 0;
+		salida = cero;
+		salida2 = cero;
+		salida3 = cero;
+		salida4 = cero;
+		salida5 = cero;
+		salida6 = cero;
+		contador = 0;
+	} else if (contador < 0) {
 		contador = 0;
 	}
-}, 1000);
+}, delay);
 
 //create your first component
 export function Home() {
@@ -67,6 +88,7 @@ export function Home() {
 				cont5={salida5}
 				cont6={salida6}
 			/>
+			<Events pausacontinua={pausa_continua} />
 		</div>
 	);
 }
