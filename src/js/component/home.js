@@ -8,7 +8,7 @@ let estado = true;
 let delay = 1000;
 let valores = "0";
 let cero = "0";
-let contador = 999995;
+let contador = 9995;
 let salida = "0";
 let salida2 = "0";
 let salida3 = "0";
@@ -17,7 +17,7 @@ let salida5 = "0";
 let salida6 = "0";
 
 let icono = <i className="fas fa-pause-circle"></i>;
-let leyendaboton = "  Pausar  ";
+let leyendaboton = "  Paausar  ";
 
 function pausa_continua() {
 	if (estado == true) {
