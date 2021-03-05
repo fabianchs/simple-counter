@@ -16,7 +16,7 @@ let salida4 = "0";
 let salida5 = "0";
 let salida6 = "0";
 let sentido = true;
-
+let max = 0;
 let icono = <i className="fas fa-pause-circle"></i>;
 let leyendaboton = "  Pausar  ";
 
