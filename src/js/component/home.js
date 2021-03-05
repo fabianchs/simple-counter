@@ -27,6 +27,10 @@ function avance() {
 	sentido = true;
 }
 
+function personaliza(a) {
+	console.log(a);
+}
+
 function pausa_continua() {
 	if (estado == true) {
 		estado = false;
@@ -36,9 +40,7 @@ function pausa_continua() {
 		estado = true;
 		leyendaboton = "  Pausar  ";
 		icono = <i className="fas fa-pause"></i>;
-		console.log(delay);
 	}
-	console.log(delay);
 }
 
 setInterval(function() {
@@ -51,7 +53,12 @@ setInterval(function() {
 	} else if (estado == false) {
 		//pass
 	}
-
+	if (contador < 0) {
+		contador = 0;
+		alert("El contador ha finalizado.");
+		sentido = true;
+		pausa_continua();
+	}
 	valores = contador.toString();
 
 	if (contador < 10) {
@@ -112,6 +119,7 @@ export function Home() {
 				leyboton={leyendaboton}
 				retroceso={reversa}
 				restaurar={avance}
+				personalizar={personaliza}
 			/>
 		</div>
 	);

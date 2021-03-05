@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 
 export function Events(props) {
@@ -68,7 +69,7 @@ export function Events(props) {
 			</div>
 			<div className="row text-center mx-auto  d-flex justify-content-center">
 				<button
-					onClick={props.restaurar}
+					onClick={props.personaliza}
 					type="button"
 					id="botones2"
 					className="btn btn-secondary">
@@ -83,5 +84,6 @@ Events.propTypes = {
 	lecturaboton: PropTypes.string,
 	leyboton: PropTypes.string,
 	retroceso: PropTypes.func,
-	restaurar: PropTypes.func
+	restaurar: PropTypes.func,
+	personaliza: PropTypes.func
 };
