@@ -34,48 +34,6 @@ export function Events(props) {
 					</button>
 				</div>
 			</div>
-			<div className="row text-center mx-auto  d-flex justify-content-center">
-				<div
-					className="callout border border-warning rounded p-1 mt-3"
-					id="formulario">
-					Personalizar contador:
-				</div>
-			</div>
-			<div className="row text-center mx-auto  d-flex justify-content-center">
-				<div className="input-group mb-3 mt-3" id="formulario">
-					<input
-						type="text"
-						className="form-control"
-						placeholder="Iniciar en"
-						aria-label="Username"
-					/>
-				</div>
-			</div>
-			<div className="row text-center mx-auto  d-flex justify-content-center">
-				<div className="input-group mb-3" id="formulario">
-					<input
-						type="text"
-						className="form-control"
-						placeholder="Terminar en"
-						aria-label="Username"
-					/>
-				</div>
-			</div>
-			<div className="row text-center mx-auto  d-flex justify-content-center">
-				<div className="callout border border-dark rounded p-1 mb-3">
-					El contador se actualiza en retroceso o avance según el
-					inicio y final.
-				</div>
-			</div>
-			<div className="row text-center mx-auto  d-flex justify-content-center">
-				<button
-					onClick={props.personaliza}
-					type="button"
-					id="botones2"
-					className="btn btn-secondary">
-					Actualizar los datos en el contador
-				</button>
-			</div>
 		</div>
 	);
 }
@@ -84,6 +42,5 @@ Events.propTypes = {
 	lecturaboton: PropTypes.string,
 	leyboton: PropTypes.string,
 	retroceso: PropTypes.func,
-	restaurar: PropTypes.func,
-	personaliza: PropTypes.func
+	restaurar: PropTypes.func
 };

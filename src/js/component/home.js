@@ -5,18 +5,17 @@ import { Counters } from "./counters.js";
 import { Events } from "./events.js";
 
 let estado = true;
+let sentido = true;
 let delay = 1000;
 let valores = "0";
 let cero = "0";
-let contador = 1000;
+let contador = 0;
 let salida = "0";
 let salida2 = "0";
 let salida3 = "0";
 let salida4 = "0";
 let salida5 = "0";
 let salida6 = "0";
-let sentido = true;
-let max = 0;
 let icono = <i className="fas fa-pause-circle"></i>;
 let leyendaboton = "  Pausar  ";
 
@@ -25,10 +24,6 @@ function reversa() {
 }
 function avance() {
 	sentido = true;
-}
-
-function personaliza(a) {
-	console.log(a);
 }
 
 function pausa_continua() {
@@ -53,34 +48,50 @@ setInterval(function() {
 	} else if (estado == false) {
 		//pass
 	}
+
 	if (contador < 0) {
-		contador = 0;
 		alert("El contador ha finalizado.");
-		sentido = true;
+		contador = 0;
 		pausa_continua();
+		sentido = true;
 	}
 	valores = contador.toString();
 
 	if (contador < 10) {
 		salida = valores[0];
+		salida2 = cero;
+		salida3 = cero;
+		salida4 = cero;
+		salida5 = cero;
+		salida6 = cero;
 	} else if (contador < 100) {
 		salida = valores[1];
 		salida2 = valores[0];
+		salida3 = cero;
+		salida4 = cero;
+		salida5 = cero;
+		salida6 = cero;
 	} else if (contador < 1000) {
 		salida = valores[2];
 		salida2 = valores[1];
 		salida3 = valores[0];
+		salida4 = cero;
+		salida5 = cero;
+		salida6 = cero;
 	} else if (contador < 10000) {
 		salida = valores[3];
 		salida2 = valores[2];
 		salida3 = valores[1];
 		salida4 = valores[0];
+		salida5 = cero;
+		salida6 = cero;
 	} else if (contador < 100000) {
 		salida = valores[4];
 		salida2 = valores[3];
 		salida3 = valores[2];
 		salida4 = valores[1];
 		salida5 = valores[0];
+		salida6 = cero;
 	} else if (contador < 1000000) {
 		salida = valores[5];
 		salida2 = valores[4];
@@ -119,7 +130,6 @@ export function Home() {
 				leyboton={leyendaboton}
 				retroceso={reversa}
 				restaurar={avance}
-				personalizar={personaliza}
 			/>
 		</div>
 	);
