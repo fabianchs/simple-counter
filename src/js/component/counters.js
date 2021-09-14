@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export function Counters(props) {
 	return (
-		<div className="text-center mx-auto  d-flex justify-content-center mt-5 ">
+		<div className="text-center mx-auto  d-flex justify-content-center mt-5 row">
 			<span
 				className="badge bg-secondary text-light d-flex justify-content-center align-items-center border border-black"
 				id="cont1">
